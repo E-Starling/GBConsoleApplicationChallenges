@@ -274,6 +274,7 @@ namespace BGFinalApplicationChallenges
         }
         private void RemoveMealByNum()
         {
+            Console.Clear();
             bool removing = true;
             while (removing)
             {
@@ -306,6 +307,7 @@ namespace BGFinalApplicationChallenges
         }
         private void RemoveMealByName()
         {
+            Console.Clear();
             bool removing = true;
             while (removing)
             {
@@ -332,7 +334,7 @@ namespace BGFinalApplicationChallenges
                            $"Meal Name: {content.MealName}\n" +
                            $"Meal Description: {content.Description}\n" +
                            $"Meal Ingredients: {content.Ingredients}\n" +
-                           $"Meal Price: {content.Price}\n\n");
+                           $"Meal Price: {content.Price}\n");
         }
         private void SeedContent()
         //Adding some menu items

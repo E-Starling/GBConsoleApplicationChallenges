@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnotherFolder", "AnotherFol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Other.Program", "Other.Program\Other.Program.csproj", "{594A3937-59C9-46FD-AC36-720B6D69E8C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.Program", "Cafe.Program\Cafe.Program.csproj", "{7FE3C4E9-C538-4B8B-83BD-DD4DC54DFFDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.Console", "Cafe.Program\Cafe.Console.csproj", "{7FE3C4E9-C538-4B8B-83BD-DD4DC54DFFDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
