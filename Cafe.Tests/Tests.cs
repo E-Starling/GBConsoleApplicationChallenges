@@ -17,6 +17,7 @@ namespace Cafe.Tests
             _repo = new MenuRepository();
             _item = new Menu(2, "Komododouble", "Double cheeseburger with medium fries and medium drink", "Lettace, Tomato, Onion, Ketchup, Mustard, Cheese", 5.99);
             _repo.AddMenuItemToDirectory(_item);
+            
 
         }
         [TestMethod]

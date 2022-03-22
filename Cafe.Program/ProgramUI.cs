@@ -165,6 +165,14 @@ namespace BGFinalApplicationChallenges
             }
             AnyKey();
         }
+        private void DisplayMeal(Menu content)
+        {
+            Console.WriteLine($"Meal Number: {content.MealNum}\n" +
+                           $"Meal Name: {content.MealName}\n" +
+                           $"Meal Description: {content.Description}\n" +
+                           $"Meal Ingredients: {content.Ingredients}\n" +
+                           $"Meal Price: {content.Price}\n");
+        }
         private void Search()
         {
             bool searchMenu = true;
@@ -328,20 +336,12 @@ namespace BGFinalApplicationChallenges
             }
             AnyKey();
         }
-        private void DisplayMeal(Menu content)
-        {
-            Console.WriteLine($"Meal Number: {content.MealNum}\n" +
-                           $"Meal Name: {content.MealName}\n" +
-                           $"Meal Description: {content.Description}\n" +
-                           $"Meal Ingredients: {content.Ingredients}\n" +
-                           $"Meal Price: {content.Price}\n");
-        }
         private void SeedContent()
         //Adding some menu items
         {
             Menu komodoDouble = new Menu(2, "Komododouble", "Double cheeseburger with medium fries and medium drink", "Lettace, Tomato, Onion, Ketchup, Mustard, Cheese", 5.99);
             Menu komodoVeggie = new Menu(5, "Komodoveggie", "Plantbased burger with medium fries and medium drink", "Lettace, Tomato, Onion, Ketchup, Mustard", 6.99);
-            Menu komodoSimple = new Menu(9, "Simple and Clean", "Large Drink and Large Fries", "Drink and Fries", 1.25);
+            Menu komodoSimple = new Menu(9, "Simple and Clean", "Large Drink and Large Fries with a free keyblade keyring", "Drink and Fries", 3.25);
             Menu komodoKid = new Menu(3, "Komodokid", "Single cheeseburger with small fries and small drink", "Cheese, Ketchup, Mustard", 2.99);
             _repo.AddMenuItemToDirectory(komodoDouble);
             _repo.AddMenuItemToDirectory(komodoVeggie);

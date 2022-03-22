@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Other.Program
+namespace Company_Outings.Program
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            ProgramUI ui = new ProgramUI();
+            ui.Run();
         }
+
+        
     }
 }

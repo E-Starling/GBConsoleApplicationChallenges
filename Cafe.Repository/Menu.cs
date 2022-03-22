@@ -8,6 +8,7 @@ namespace Cafe.Repository
 {
     public class Menu
     {
+        
         public Menu() { }
         public Menu(int mealNum, string mealName, string description, string ingredients, double price)
         {
