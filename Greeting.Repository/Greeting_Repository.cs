@@ -20,7 +20,7 @@ namespace Greeting.Repository
         // Read
         public List<Customer> GetCustomers()
         {
-            return _greetingDir;
+            return _greetingDir.OrderBy(g => g.LastName).ThenBy(g => g.FirstName).ToList();
         }
         public List<Customer> GetByLastName(string lastName)
         {

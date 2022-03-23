@@ -302,7 +302,7 @@ namespace Company_Outings.Program
         private void DisplayGolf()
         {
             Console.Clear();
-            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Golf);
+            List<Outing> listofEvents = _repo.GetOutingByEvent(EventType.Golf);
             
             foreach (Outing outing in listofEvents)
             {
@@ -315,7 +315,7 @@ namespace Company_Outings.Program
         private void DisplayBowling()
         {
             Console.Clear();
-            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Bowling);
+            List<Outing> listofEvents = _repo.GetOutingByEvent(EventType.Bowling);
 
             foreach (Outing outing in listofEvents)
             {
@@ -328,7 +328,7 @@ namespace Company_Outings.Program
         private void DisplayAmusementPark()
         {
             Console.Clear();
-            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Amusement_Park);     
+            List<Outing> listofEvents = _repo.GetOutingByEvent(EventType.Amusement_Park);     
             foreach (Outing outing in listofEvents)
             {
                 DisplayOuting(outing);  
