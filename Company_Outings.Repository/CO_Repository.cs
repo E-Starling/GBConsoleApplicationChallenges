@@ -22,9 +22,10 @@ namespace Company_Outings.Repository
         {
             return _outingDir;
         }
-        public Outing GetOutingByEventType(EventType events)
+        public  List<Outing> GetOutingByEvent(EventType events)
         {
-            return _outingDir.Where(o => o.Events == events).SingleOrDefault();
+            return _outingDir.Where(o => o.Events == events).ToList();
         }
+        
     }
 }

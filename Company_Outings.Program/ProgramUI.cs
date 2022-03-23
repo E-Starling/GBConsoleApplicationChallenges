@@ -23,9 +23,8 @@ namespace Company_Outings.Program
                 Console.Clear();
                 Console.WriteLine("Enter the number of the option you would like:\n" +
                     "1. Display\n" +
-                    "2. Search by EventType\n" +
-                    "3. Add Outing\n" +
-                    "4. Exit");
+                    "2. Add Outing\n" +
+                    "3. Exit");
                 string user = Console.ReadLine();
                 switch (user)
                 {
@@ -33,19 +32,16 @@ namespace Company_Outings.Program
                         Display();
                         break;
                     case "2":
-                        //SearchEventType();
-                        break;
-                    case "3":
                         AddOuting();
                         break;
-                    case "4":
+                    case "3":
                     case "e":
                     case "exit":
                         continueToRun = false;
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Please enter a valid number from 1 to 4.");
+                        Console.WriteLine("Please enter a valid number from 1 to 3.");
                         Console.ForegroundColor = ConsoleColor.White;
                         AnyKey();
                         break;
@@ -225,7 +221,7 @@ namespace Company_Outings.Program
                         DisplayAll();
                         break;
                     case "2":
-                        //DisplayOutingsByEventType();
+                        DisplayOutingsByEventType();
                         break;
                     case "3":
                         //Go back
@@ -248,7 +244,8 @@ namespace Company_Outings.Program
             {
                 DisplayOuting(outing);
             }
-            Console.WriteLine();
+            double total = listofOutings.Select(l => l.EventCost).Sum();
+            Console.WriteLine($"Here is the total cost of all the events: ${total}");
             AnyKey();
         }
         private void DisplayOuting(Outing outing)
@@ -258,8 +255,8 @@ namespace Company_Outings.Program
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"Number of people attending: {outing.NumPeople}\n" +
                            $"Date: {outing.Date.ToShortDateString()}\n" +
-                           $"Total cost per person: {outing.PersonCost}\n" +
-                           $"Total cost for the event: {outing.EventCost}\n");
+                           $"Total cost per person: ${outing.PersonCost}\n" +
+                           $"Total cost for the event: ${outing.EventCost}\n");
         }
         private void DisplayOutingsByEventType()
         {
@@ -280,6 +277,7 @@ namespace Company_Outings.Program
                         DisplayGolf();
                         break;
                     case "2":
+                        
                         DisplayBowling();
                         break;
                     case "3":
@@ -304,21 +302,55 @@ namespace Company_Outings.Program
         private void DisplayGolf()
         {
             Console.Clear();
-            List<Outing> listofOutings = _repo.GetOutings();
-             listofOutings.Where(l => l.Equals("Golf"));
-
+            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Golf);
+            
+            foreach (Outing outing in listofEvents)
+            {
+                DisplayOuting(outing);
+            }
+            double total = listofEvents.Select(l => l.EventCost).Sum();
+            Console.WriteLine($"Here is the total cost of all the golf events: ${total}");
+            AnyKey();
         }
         private void DisplayBowling()
         {
+            Console.Clear();
+            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Bowling);
 
+            foreach (Outing outing in listofEvents)
+            {
+                DisplayOuting(outing);
+            }
+            double total = listofEvents.Select(l => l.EventCost).Sum();
+            Console.WriteLine($"Here is the total cost of all the bowling events: ${total}");
+            AnyKey();
         }
         private void DisplayAmusementPark()
         {
+            Console.Clear();
+            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Amusement_Park);     
+            foreach (Outing outing in listofEvents)
+            {
+                DisplayOuting(outing);
+                
+            }
+            double total = listofEvents.Select(l => l.EventCost).Sum();
+            Console.WriteLine($"Here is the total cost of all the amusement park events: ${total}");
 
+            AnyKey();
         }
         private void DisplayConcert()
         {
+            Console.Clear();
+            List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Concert);
 
+            foreach (Outing outing in listofEvents)
+            {
+                DisplayOuting(outing);
+            }
+            double total = listofEvents.Select(l => l.EventCost).Sum();
+            Console.WriteLine($"Here is the total cost of all the concert events: ${total}");
+            AnyKey();
         }
         private double CalculateTotalOutingCost()
         {
