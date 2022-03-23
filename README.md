@@ -16,4 +16,5 @@ Here are a list of programs that are in this repository:
 - Shows their first name, last name, the type of customer (past, potential, and current), and an email message for the type of customer
 - Can search for a customer Id and modify them or delete them.
 - Can add in new customers
-Projects made by Ethan Starling
+
+Projects made by: Ethan Starling
