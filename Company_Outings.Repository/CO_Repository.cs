@@ -25,7 +25,6 @@ namespace Company_Outings.Repository
         public  List<Outing> GetOutingByEvent(EventType events)
         {
             return _outingDir.Where(o => o.Events == events).ToList();
-        }
-        
+        }     
     }
 }

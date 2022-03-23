@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Company_Outings.Program
+namespace Greeting.Program
 {
     class Program
     {
@@ -12,6 +12,6 @@ namespace Company_Outings.Program
         {
             ProgramUI ui = new ProgramUI();
             ui.Run();
-        }  
+        }
     }
 }

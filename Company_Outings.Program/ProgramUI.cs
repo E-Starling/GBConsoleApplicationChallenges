@@ -331,12 +331,10 @@ namespace Company_Outings.Program
             List<Outing> listofEvents = _repo.GetOutingByEvent(events: EventType.Amusement_Park);     
             foreach (Outing outing in listofEvents)
             {
-                DisplayOuting(outing);
-                
+                DisplayOuting(outing);  
             }
             double total = listofEvents.Select(l => l.EventCost).Sum();
             Console.WriteLine($"Here is the total cost of all the amusement park events: ${total}");
-
             AnyKey();
         }
         private void DisplayConcert()
