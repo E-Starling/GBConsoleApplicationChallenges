@@ -113,6 +113,7 @@ namespace Company_Outings.Program
                             checkingPeopleNum = false;     
                     }
                 }
+                double numpeople = outing.NumPeople;
                 // Date of the Event
                 bool checkingDate = true;
                 while (checkingDate)
@@ -153,27 +154,9 @@ namespace Company_Outings.Program
                         checkingPersonCost = false;
                     }
                 }
+                double personcost = outing.PersonCost;
                 // Event Cost
-                bool checkingEventCost = true;
-                while (checkingEventCost)
-                {
-                    Console.Write("Please enter the total cost for the event: ");
-                    double eventCost;
-                    string user = Console.ReadLine();
-                    if (!double.TryParse(user, out eventCost))
-                    {
-                        Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Please enter a number!\n");
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-                    else
-                    {
-                        outing.EventCost = double.Parse(user);
-                        checkingEventCost = false;
-                    }
-                }
-               
+                outing.EventCost = numpeople * personcost;
                 _repo.AddOutingToDirectory(outing);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Outing was successfuly added!");
@@ -350,20 +333,15 @@ namespace Company_Outings.Program
             Console.WriteLine($"Here is the total cost of all the concert events: ${total}");
             AnyKey();
         }
-        private double CalculateTotalOutingCost()
-        {
-            List<Outing> listofOutings = _repo.GetOutings();
-            double total = listofOutings.Select(l => l.EventCost).Sum();
-            return total;
-        }
+       
         private void SeedContent()
         {
-            Outing golf1 = new Outing(EventType.Golf, 15, new DateTime(2022, 5, 3), 7.99, 678);
-            Outing golf2 = new Outing(EventType.Golf, 54, new DateTime(2023, 2, 4), 9.99, 1243);
-            Outing bowling = new Outing(EventType.Bowling, 65, new DateTime(2022, 6, 15), 10, 532);
-            Outing amusementpark = new Outing(EventType.Amusement_Park, 67, new DateTime(2023, 4, 22), 12.99, 540);
-            Outing concert1 = new Outing(EventType.Concert, 63, new DateTime(2022, 7, 6), 40, 777);
-            Outing concert2 = new Outing(EventType.Concert, 200, new DateTime(2022, 12, 11), 50, 2000);
+            Outing golf1 = new Outing(EventType.Golf, 15, new DateTime(2022, 5, 3), 7.99, 119.85);
+            Outing golf2 = new Outing(EventType.Golf, 54, new DateTime(2023, 2, 4), 9.99, 539.46);
+            Outing bowling = new Outing(EventType.Bowling, 65, new DateTime(2022, 6, 15), 10, 650);
+            Outing amusementpark = new Outing(EventType.Amusement_Park, 67, new DateTime(2023, 4, 22), 12.99, 870.33);
+            Outing concert1 = new Outing(EventType.Concert, 63, new DateTime(2022, 7, 6), 40, 2520);
+            Outing concert2 = new Outing(EventType.Concert, 200, new DateTime(2022, 12, 11), 50, 10000);
             _repo.AddOutingToDirectory(golf1);
             _repo.AddOutingToDirectory(golf2);
             _repo.AddOutingToDirectory(bowling);
@@ -373,7 +351,9 @@ namespace Company_Outings.Program
         }
         private void AnyKey()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Press any key to continue...");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }
     }
