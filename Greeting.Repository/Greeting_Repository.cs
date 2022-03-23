@@ -22,13 +22,17 @@ namespace Greeting.Repository
         {
             return _greetingDir;
         }
-        public List<Customer> GetByLastName(string lName)
+        public List<Customer> GetByLastName(string lastName)
         {
-            return _greetingDir.Where(g => g.LastName == lName).ToList();
+            return _greetingDir.Where(g => g.LastName == lastName).ToList();
         }
-        public List<Customer> GetByType(CustomerType type)
+        public List<Customer> GetByType(CustomerType custType)
         {
-            return _greetingDir.Where(g => g.CustType == type).ToList();
+            return _greetingDir.Where(g => g.CustType == custType).ToList();
+        }
+        public Customer GetCustById(int iD)
+        {
+            return _greetingDir.Where(g => g.ID == iD).SingleOrDefault();
         }
         // Delete
         public bool DeleteExistingCustomer(Customer existingCustomer)
