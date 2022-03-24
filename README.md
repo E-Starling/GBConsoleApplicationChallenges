@@ -17,4 +17,10 @@ Here are a list of programs that are in this repository:
 - Can search for a customer Id and modify them or delete them.
 - Can add in new customers
 
+#Claims (Extra)
+- Displays list of claims
+- Can go down list of claims and choose to delete them
+- Can add in new claims
+- Shows if claim is valid if date of the claim is within 30 days of the accident
+
 Projects made by: Ethan Starling
