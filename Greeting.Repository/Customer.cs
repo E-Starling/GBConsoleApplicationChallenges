@@ -21,6 +21,5 @@ namespace Greeting.Repository
         public string LastName { get; set; }
         public CustomerType CustType { get; set; }     
         public int ID { get; set; }
-
     }
 }

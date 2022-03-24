@@ -56,7 +56,6 @@ namespace Company_Outings.Program
             {
                 Console.Clear();
                 Outing outing = new Outing();
-                //EventType events,int numPeople, DateTime date, double personCost, double eventCost
                 // EventType
                 bool checkingEventType = true;
                 while (checkingEventType)

@@ -23,7 +23,6 @@ namespace Greeting.Tests
         public void AddCustToDir_ShouldBeTrue()
         {
             Customer bobby = new Customer("Bobby", "Kotick", CustomerType.Potential, 420);
-            //DeveloperRepo repo = new DeveloperRepo();
             bool addResult = _repo.AddCustomerToDirectory(bobby);
             Assert.IsTrue(addResult);
         }

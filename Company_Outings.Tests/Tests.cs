@@ -12,7 +12,7 @@ namespace Company_Outings.Tests
         //Adding an outing
         public void AddToMenuDir_ShouldBeTrue()
         {
-            Outing outing = new Outing(EventType.Concert, 23, new DateTime(2023, 3, 2), 50);
+            Outing outing = new Outing(EventType.Concert, 23, new DateTime(2023, 3, 2), 50, 1150);
             CO_Repository repo = new CO_Repository();
             bool addResult = repo.AddOutingToDirectory(outing);
             Assert.IsTrue(addResult);
@@ -21,7 +21,7 @@ namespace Company_Outings.Tests
         //Seeing if list of outings has the outing just added
         public void GetDirectly_ShouldReturnCurrentCollection()
         {
-            Outing outing = new Outing(EventType.Concert, 23, new DateTime(2023, 3, 2), 50); 
+            Outing outing = new Outing(EventType.Concert, 23, new DateTime(2023, 3, 2), 50, 1150); 
             CO_Repository repo = new CO_Repository();
             repo.AddOutingToDirectory(outing);
             List<Outing> outings = repo.GetOutings();
