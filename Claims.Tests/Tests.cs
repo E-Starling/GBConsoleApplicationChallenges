@@ -37,14 +37,7 @@ namespace Claims.Tests
             Assert.IsTrue(dirhasclaims);
         }
         [TestMethod]
-        //Searching claim in dir by ID
-        public void GetClaimById_ShouldReturnTrue()
-        {
-            Claim searchID = _repo.GetClaimById(1);
-            Assert.AreEqual(_claim, searchID);
-        }
-        [TestMethod]
-        //Deleting exiting Customer in Dir
+        //Deleting exiting Claim in Dir
         public void DeleteExistingClaim_ShouldReturnTrue()
         {
             Claim claim = _repo.GetClaimById(1);
