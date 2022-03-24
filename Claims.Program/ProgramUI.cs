@@ -60,7 +60,6 @@ namespace Claims.Program
             {
                 Console.Clear();
                 Claim claim = new Claim();
-                //(int iD, ClaimType claim, string description, double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
                 // ID
                 bool checkingiD = true;
                 while (checkingiD)
