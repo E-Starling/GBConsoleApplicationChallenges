@@ -254,6 +254,8 @@ namespace Claims.Program
             List<Claim> listofClaims = _repo.GetClaims();
                 while (nextClaim)
                 {
+                if (_repo.GetClaims().Count() != 0)
+                {
                     foreach (Claim claim in listofClaims)
                     {
                         Console.Clear();
@@ -269,13 +271,12 @@ namespace Claims.Program
                             case "y":
                                 Claim claims = _repo.GetClaimById(claim.ID);
                                 _repo.DeleteExistingClaim(claims);
-
                                 break;
                             case "2":
                             case "no":
                             case "n":
                                 //Go Back to main menu
-                                nextClaim = false;
+                                nextClaim=false;
                                 break;
                             default:
                                 Console.ForegroundColor = ConsoleColor.Red;
@@ -286,6 +287,11 @@ namespace Claims.Program
                         }
                         break;
                     }
+                }
+                else
+                {
+                    nextClaim = false;
+                }
             }        
         }
         private void DisplayClaimNext(Claim claim)
